@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Document</title>
+<style>
+	
+.form{
+
+  	display: grid;
+  	gap: 10px;
+	width: 25%;
+}	
+input,select {
+	padding: 5px;
+}
+</style>
+<head>
+<body>
+<a href="Measurement.html">Measurement</a>
+<h1> Operation </h1> 
+	<div class="form">
+	<label>First Number: </label>
+	<input type="number" id="num1" value="" /><br>
+	<label>Second Number: </label>
+	<input type="number" id="num2" value="" /><br>	
+	<label>Choises: </label>
+	<select id="operator" value="">
+		<option value=""></option>
+		<option value="plus">+</option>
+		<option value="minus">-</option>
+		<option value="times">x</option>
+		<option value="divid">/</option>
+	</select>  <br>
+
+	<input type="submit" value="Submit" id="input" onclick="Func()" />
+
+	<p id="answer">
+	</p>	
+
+</body>
+
+<script>
+	
+	function Func(){
+	const num1 = parseInt(document.getElementById("num1").value);
+	const num2 = parseInt(document.getElementById("num2").value);
+	const select = document.getElementById("operator").value;
+	var oper;
+	
+	if(select == 'plus'){
+		oper = num1 + num2;
+		document.getElementById("answer").innerHTML = oper;
+	} else if (select == 'minus'){
+		oper = num1 - num2;
+		document.getElementById("answer").innerHTML = oper;
+	}else if (select == 'times'){
+		oper = num1 * num2;
+		document.getElementById("answer").innerHTML = oper;
+	}else if (select == 'divid'){
+		oper = num1 / num2;
+		document.getElementById("answer").innerHTML = oper;
+	}else {
+		document.getElementById("answer").innerHTML = "Please select Operator";
+	}
+ 	
+	}
+
+</script>
+</html>

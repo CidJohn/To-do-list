@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordering App</title>
+    <link rel="stylesheet" href="css/style.css">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+        <!-- MDB -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../css/login.css">
+        <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  </head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" >Ordering System</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" id="Home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="Shopfloor">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="AboutUs">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#" tabindex="-1" aria-disabled="true" id="ContactUs">Contast us</a>
+              </li>
+            </ul>
+            <form class="d-flex" id="authForm">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="SignupButton">Sign up</a>
+                </li>
+                <li class="nav-item" id="loginLi">
+                  <button type="button" class="btn btn-outline-dark" id="LoginPageButton">Login</button>
+                </li>
+                <li class="nav-item" id="profileLi" style="display: none;">
+
+                </li>
+              </ul>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+    <section id="HomeSection" class="secDisplay" >
+        <div id="homeCarousel" class="mb-5"></div>
+        <div id="homeCards"></div>
+        <div id="homeFooter"></div>
+    </section>
+
+    <section id="OrderingSection" class="secDisplay">
+    <h1 class="text-center mt-5 mb-4">Ordering App</h1>
+
+        <div class="">
+            <div class="row ">
+                <div class="col-md-9">
+                    <div class="menu d-flex justify-content-sm-evenly  container ">
+                        
+                    </div>
+                </div>
+                <div class="col-md-3   d-flex justify-content-sm-center ">
+                    <div class="Card ">
+                        <h2 class="mb-3">Shopping Cart</h2>
+                        <ul id="cart" class="mb-3 list-group">
+                            <!-- Cart items will be added here dynamically -->
+                        </ul>
+                        <p>Total: $<span id="total">0.00</span></p>
+                        <button id="checkout" class="btn btn-success">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="AboutUsSection" class="secDisplay">
+      <h1  class="text-center mt-5 mb-4" >About Us</h1>
+
+    </section>
+
+    <section id="ContactUsSection" class="secDisplay">
+      <div class="container">
+      <div id="contact"></div>
+        </div>
+    </section>
+
+    <script src="js/Ordering.js" type="module"></script>
+    <script src="js/Navbar.js" type="module"></script>
+    <script src="js/Homeview.js" type="module"></script>
+        <script src="js/Forms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality Quiz</title>
+    <style>
+        body {
+        margin-top: 20px; /* Add margin to the top */
+        margin-bottom: 20px; /* Add margin to the bottom */
+        padding: 10px 20px;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column; /* Add this line to stack elements vertically */
+        }
+
+        .container {
+            text-align: center;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 2px solid #007bff; /* Bootstrap's primary color */
+            background-color: transparent;
+            color: #007bff;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Personality Quiz</h1>
+    <div id="quiz"></div>
+    <div id="results"></div>
+
+    <script>
+        const questions = [
+            { question: "You went to a party last night and when you arrived to school the next day, everybody is talking about something you didn’t do. What will you do?", choices: ["A. Avoid everything and go with your friends", "B. Go and talk with the person that started the rumors", "C. Go and talk with the teacher"] },
+            { question: "What quality do you excel the most?", choices: ["A. Empathy", "B. Curiosity", "C. Perseverance"] },
+            { question: "You are walking down the street when you see an old lady trying to cross, what will you do?", choices: ["A. Go and help her", "B. Go for a policeman and ask him to help", "C. Keep walking ahead"] },
+            { question: "You had a very difficult day at school, you will maintain a ____ attitude", choices: ["A. Depends on the situation", "B. Positive", "C. Negative"] },
+            { question: "You are at a party and a friend of yours comes over and offers you a drink, what do you do?", choices: ["A. Say no thanks", "B. Drink it until it is finished", "C. Ignore him and get angry at him"] },
+            { question: "You just started in a new school, you will...", choices: ["A. Go and talk with the person next to you", "B. Wait until someone comes over you", "C. Not talk to anyone"] },
+            { question: "In a typical Friday, you would like to..", choices: ["A. Go out with your close friends to eat", "B. Go to a social club and meet more people", "C. Invite one of your friends to your house"] },
+            { question: "Your relationship with your parents is..", choices: ["A. I like both equally", "B. I like both equally", "C. I like my Mom the most"] }
+        ];
+
+        let answers = {};
+
+        function displayQuestions() {
+            let quizDiv = document.getElementById('quiz');
+            questions.forEach((q, index) => {
+                let questionDiv = document.createElement('div');
+                questionDiv.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+                q.choices.forEach(choice => {
+                    let label = document.createElement('label');
+                    let radioBtn = document.createElement('input');
+                    radioBtn.setAttribute('type', 'radio');
+                    radioBtn.setAttribute('name', `q${index}`);
+                    radioBtn.setAttribute('value', choice);
+                    radioBtn.addEventListener('change', () => {
+                        answers[index] = choice;
+                    });
+                    label.appendChild(radioBtn);
+                    label.appendChild(document.createTextNode(choice));
+                    questionDiv.appendChild(label);
+                    questionDiv.appendChild(document.createElement('br'));
+                });
+                quizDiv.appendChild(questionDiv);
+            });
+        }
+
+        function countAnswers() {
+            let counts = { 'a': 0, 'b': 0, 'c': 0 };
+            Object.values(answers).forEach(ans => {
+                counts[ans.toLowerCase()]++;
+            });
+            return counts;
+        }
+
+        function displayResults() {
+            let counts = countAnswers();
+            let resultsDiv = document.getElementById('results');
+            let result;
+
+            if (counts['a'] > counts['b'] && counts['a'] > counts['c']) {
+                result = `Self-Management You manage yourself well; You take responsibility
+                for your own behavior and well - being.`;
+            } else if (counts['b'] > counts['a'] && counts['b'] > counts['c']) {
+                result = `Empathy You are emphatic. You see yourself in someone else’s situation before doing rash decisions.You tend to listen to other’s  voices.`;
+            } else if (counts['c'] > counts['a'] && counts['c'] > counts['b']) {
+                result = `Self-Awareness You are conscious of your own character, feelings, motives, and desires.The process can be painful but it leads to greater self - awareness.`;
+            } else {
+                result = `Self-Awareness You are conscious of your own character, feelings, motives, and desires.The process can be painful but it leads to greater self - awareness.`; // If counts are tied, default to Self-Awareness
+            }
+
+            resultsDiv.innerHTML = `<h2>Results:</h2>`;
+            resultsDiv.innerHTML += `<p>${result}</p>`;
+           // alert(`Results: ${result}`);
+        }
+
+        window.onload = function () {
+            displayQuestions();
+            document.getElementById('quiz').innerHTML += '<button onclick="displayResults()">Submit</button>';
+        };
+    </script>
+</body>
+
+</html>

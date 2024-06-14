@@ -1,0 +1,114 @@
+/* Reset default browser styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set global font styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Style header and navigation */
+header {
+  background-color: #4CAF50;
+  padding: 10px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+li {
+  margin: 0 5px;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Style banner section */
+#banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  background-color: #f1f1f1;
+}
+#banner img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+#banner h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+#banner h2 {
+  font-size: 24px;
+}
+
+/* Style sections */
+section {
+  padding: 50px;
+}
+h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+ul {
+  list-style: none;
+}
+li h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+li p {
+  margin-bottom: 10px;
+}
+li ul {
+  margin-left: 20px;
+}
+
+/* Style contact form */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+}
+textarea {
+  height: 150px;
+}
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}

@@ -1,0 +1,50 @@
+
+.text3d {
+  display: inline-block;
+  perspective: 500px;
+  font-size: 100px;
+  text-transform: uppercase;
+}
+
+.front, .back {
+  position: absolute;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  border: 5px solid #000;
+}
+
+.front {
+  transform: translateZ(50px);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(50px);
+}
+
+span:nth-child(1) {
+  transform: translate3d(0, 0, 0);
+}
+
+span:nth-child(2) {
+  transform: translate3d(100px, 0, 0);
+}
+
+span:nth-child(3) {
+  transform: translate3d(200px, 0, 0);
+}
+
+span:nth-child(4) {
+  transform: translate3d(300px, 0, 0);
+}
+
+span:nth-child(5) {
+  transform: translate3d(400px, 0, 0);
+}
+
+span:nth-child(6) {
+  transform: translate3d(500px, 0, 0);
+}
+
+span:nth-child(7) {
+  transform: translate3d(600px, 0, 0);
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Measurement</title>
+</head>
+
+<body>
+<a href="test.html">test</a>
+<h1>Measurement </h1>
+<select id="Frstselector">
+<option value="frstkm">Kilometer</option>
+<option value="frstm">Meters</option>
+<option value="frstmm">Millimeters</option>
+</select>
+<select id="Sndselector">
+<option value="sndkm">Kilometer</option>
+<option value="sndm">Meters</option>
+<option value="sndmm">Millimeters</option>
+</select>
+ <br><br>
+<input type="text" id="input" /> <br><br>
+
+<input type="submit" onclick="funct()" value="Convert" />
+
+<p id="demo"></p>
+
+</body>
+
+
+<script>
+	let solution;
+	let num;
+	let km = 1000.0;
+    let m = 100.0;
+    let cm = 10.0;
+    let mm = 0.01;
+    let ft = 30.48;
+
+	function funct(){
+				const input = parseFloat(document.getElementById("input").value);
+				const Frst = document.getElementById("Frstselector").value;
+				const Snd = document.getElementById("Sndselector").value;
+	if(Frst == "frstkm" && Snd == "sndm"){
+		solution = input * km;
+		lenght(solution);
+	}
+	else if(Frst == "frstkm" && Snd == "sndmm"){
+		solution = input * km * m * cm;
+		lenght(solution);
+	}
+	else if(Frst == "frstm" && Snd == "sndkm"){
+		solution = input / km;
+		lenght(solution);
+	}
+	else if(Frst == "frstm" && Snd == "sndmm"){
+		solution = input * m * cm;
+		lenght(solution);
+	}
+	else if(Frst == "frstmm" && Snd == "sndkm"){
+		solution = input / km / m / cm;
+		lenght(solution);	
+	}
+	else if(Frst == "frstmm" && Snd == "sndm"){
+		solution = input / m / cm;
+		lenght(solution);
+	}
+}
+const lenght = (input) => {
+		input = solution.toFixed(2);
+		document.getElementById("demo").innerHTML = input;
+}
+</script>
+
+</html>

@@ -1,0 +1,51 @@
+h2:hover{
+    color:red;
+}
+.title {
+    color: blue;
+}
+/* #google-link:link {
+    color: blue;
+}
+#google-link:visited{
+    color: red;
+} */
+/* li:nth-child(6){
+    color: pink;
+} */
+h2 + a {
+    color: red;
+}
+textarea ~ button {
+    color: purple;
+}
+ul > li {
+    color: blue;
+}
+
+/* ul li {
+    color:  green;
+} */
+h2[class=subtitle]{
+    color: blue;
+}
+
+/* img[src*="./img/"]{
+    border: 10px solid black;
+} */
+img[src^="./img/"] {
+    border: 10px solid black;
+}
+
+h2[class|=article-subtitle]{
+    background: green;
+}
+/* 
+    subtitle-0384
+    subtitle-0938
+*/
+/* 
+selector{
+    property: value;
+} 
+*/
